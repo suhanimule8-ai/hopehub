@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HopeHub | Request Help</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="brand">🌷 <span>HopeHub</span></div>
+    <a href="/" class="nav-admin">← Home</a>
+</nav>
+
+<section class="form-page">
+
+    <div class="form-header">
+        <div class="big-icon">🆘</div>
+
+        <p class="small-title">WE ARE HERE FOR YOU</p>
+
+        <h1>Request Help</h1>
+
+        <p>
+            Tell us what you need. Your request will be
+            recorded securely and shared with our community.
+        </p>
+    </div>
+
+    <div class="form-box">
+
+        <form action="/request-help" method="POST">
+
+            <label>Your Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
+
+            <label>Location</label>
+            <input type="text"
+                   name="location"
+                   placeholder="Enter your location"
+                   required>
+
+            <label>Type of Help Needed</label>
+            <input type="text"
+                   name="help_type"
+                   placeholder="Example: Food, Clothes, Books..."
+                   required>
+
+            <label>Contact Number</label>
+            <input type="tel"
+                   name="contact"
+                   placeholder="Enter contact number"
+                   required>
+
+            <label>Describe Your Problem</label>
+            <textarea name="problem"
+                      rows="5"
+                      placeholder="Tell us briefly about your situation..."
+                      required></textarea>
+
+            <button type="submit" class="submit-btn">
+                🆘 Submit Help Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-logo">🌷 HopeHub</div>
+    <p>Smart Community Resource Hub</p>
+    <p class="copyright">© 2026 HopeHub</p>
+</footer>
+
+</body>
+</html>

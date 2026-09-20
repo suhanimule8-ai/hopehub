@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7ff;
+    color: #263238;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    color: white;
+    padding: 28px 7%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header p {
+    margin: 6px 0 0;
+    opacity: 0.9;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.page-title {
+    margin-bottom: 30px;
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #202938;
+}
+
+.page-title p {
+    color: #6b7280;
+}
+
+/* SECTION */
+
+section {
+    margin-bottom: 35px;
+}
+
+section h2 {
+    font-size: 23px;
+    margin-bottom: 18px;
+    color: #374151;
+}
+
+/* GRID */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* HELP CARD */
+
+.help-card {
+    display: flex;
+    gap: 18px;
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.2s;
+}
+
+.help-card:hover,
+.donation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+    min-width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.card-content h3,
+.donation-content h3 {
+    margin: 0 0 12px;
+    color: #4f46e5;
+}
+
+.card-content p,
+.donation-content p {
+    margin: 7px 0;
+    color: #4b5563;
+}
+
+.problem {
+    margin-top: 13px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+    line-height: 1.5;
+}
+
+/* DONATION CARD */
+
+.donation-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.2s;
+}
+
+.donation-image {
+    height: 145px;
+    background: linear-gradient(135deg, #eef2ff, #f5e8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+}
+
+.donation-content {
+    padding: 20px;
+}
+
+/* TAGS */
+
+.tag {
+    display: inline-block;
+    margin: 15px 20px 0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #e5e7eb;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.tag.book {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.tag.clothes {
+    background: #fce7f3;
+    color: #be185d;
+}
+
+.tag.medicine {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #6b7280;
+    background: white;
+    margin-top: 40px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard {
+        width: 92%;
+    }
+
+    .page-title h1 {
+        font-size: 27px;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HopeHub | Admin Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="brand">
+        🌷 <span>HopeHub</span>
+    </div>
+
+    <a href="/" class="nav-admin">
+        ← Home
+    </a>
+
+</nav>
+
+
+<section class="form-page">
+
+    <div class="form-header">
+
+        <div class="big-icon">🔐</div>
+
+        <p class="small-title">HOPEHUB ADMIN</p>
+
+        <h1>Welcome Back</h1>
+
+        <p>
+            Login to manage help requests, donations
+            and volunteer support.
+        </p>
+
+    </div>
+
+
+    <div class="form-box">
+
+        <form method="POST">
+
+            <label>Username</label>
+
+            <input type="text"
+                   name="username"
+                   placeholder="Enter username"
+                   required>
+
+
+            <label>Password</label>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Enter password"
+                   required>
+
+
+            <button type="submit" class="submit-btn">
+                🔐 Login to Dashboard
+            </button>
+
+        </form>
+
+
+        {% if error %}
+
+        <p style="
+            color:#e53935;
+            text-align:center;
+            margin-top:18px;
+            font-weight:bold;
+        ">
+            {{ error }}
+        </p>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-logo">
+        🌷 HopeHub
+    </div>
+
+    <p>
+        Smart Community Resource Hub
+    </p>
+
+    <p class="copyright">
+        © 2026 HopeHub
+    </p>
+
+</footer>
+
+</body>
+</html>

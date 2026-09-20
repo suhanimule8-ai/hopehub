@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HopeHub | Smart Community Resource Hub</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="manifest"
+          href="{{ url_for('static', filename='manifest.json') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="brand">
+        🌷 <span>HopeHub</span>
+    </div>
+
+    <a href="/admin-login" class="nav-admin">
+        Admin Login
+    </a>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            💜 Together We Can Help
+        </div>
+
+        <h1>
+            Hope Starts With<br>
+            <span>You.</span>
+        </h1>
+
+        <p>
+            A smart community platform connecting people
+            who need help with people who want to help.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/request-help-page" class="primary-btn">
+                🆘 Request Help
+            </a>
+
+            <a href="/donate-page" class="secondary-btn">
+                🎁 Donate Now
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-emoji">
+        🤝
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+<section class="intro">
+
+    <p class="small-title">WELCOME TO HOPEHUB</p>
+
+    <h2>
+        One Platform.<br>
+        <span>Many Ways To Help.</span>
+    </h2>
+
+    <p class="intro-text">
+        HopeHub makes community support simple, quick and
+        organized. Whether you need help or want to help,
+        you are in the right place.
+    </p>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services">
+
+    <div class="service-card purple">
+        <div class="service-icon">🆘</div>
+
+        <h3>Need Help?</h3>
+
+        <p>
+            Tell us what help you need and connect
+            with people who can support you.
+        </p>
+
+        <a href="/request-help-page">
+            Request Help →
+        </a>
+    </div>
+
+
+    <div class="service-card pink">
+        <div class="service-icon">🎁</div>
+
+        <h3>Want To Donate?</h3>
+
+        <p>
+            Donate useful items such as books,
+            clothes and medicines to people in need.
+        </p>
+
+        <a href="/donate-page">
+            Donate Now →
+        </a>
+    </div>
+
+
+    <div class="service-card green">
+        <div class="service-icon">🤝</div>
+
+        <h3>Be A Volunteer</h3>
+
+        <p>
+            Support your community and become a part
+            of something meaningful.
+        </p>
+
+        <a href="/donate-page">
+            Join HopeHub →
+        </a>
+    </div>
+
+</section>
+
+
+<!-- IMPACT -->
+<section class="impact">
+
+    <div>
+        <span>💜</span>
+        <h2>Help With Hope</h2>
+
+        <p>
+            Small actions can create a big difference.
+            HopeHub brings people together to make
+            support easier and faster.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        🌷 HopeHub
+    </div>
+
+    <p>
+        Smart Community Resource Hub
+    </p>
+
+    <p class="copyright">
+        © 2026 HopeHub. Helping communities, together.
+    </p>
+
+</footer>
+
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register(
+        "{{ url_for('static', filename='sw.js') }}"
+    );
+}
+</script>
+
+</body>
+</html>

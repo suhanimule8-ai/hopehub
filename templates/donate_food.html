@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HopeHub | Donate Food</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="brand">🌷 <span>HopeHub</span></div>
+
+    <a href="/donate-page" class="nav-admin">
+        ← Back
+    </a>
+</nav>
+
+<section class="form-page">
+
+    <div class="form-header">
+        <div class="big-icon">🍚</div>
+
+        <p class="small-title">SHARE FOOD • SHARE HOPE</p>
+
+        <h1>Donate Food</h1>
+
+        <p>
+            Your contribution can help provide food support
+            to people and families in need.
+        </p>
+    </div>
+
+    <div class="form-box">
+
+        <form action="/donate-food" method="POST">
+
+            <label>Your Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
+
+            <label>Contact Number</label>
+            <input type="tel"
+                   name="contact"
+                   placeholder="Enter contact number"
+                   required>
+
+            <label>Location</label>
+            <input type="text"
+                   name="location"
+                   placeholder="Enter your location"
+                   required>
+
+            <label>Food Type</label>
+            <input type="text"
+                   name="food_type"
+                   placeholder="Example: Rice, Dal, Packaged Food..."
+                   required>
+
+            <label>Quantity</label>
+            <input type="number"
+                   name="quantity"
+                   min="1"
+                   placeholder="Enter quantity"
+                   required>
+
+            <button type="submit" class="submit-btn">
+                🍚 Submit Food Donation
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-logo">🌷 HopeHub</div>
+    <p>Smart Community Resource Hub</p>
+    <p class="copyright">© 2026 HopeHub</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+

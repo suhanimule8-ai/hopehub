@@ -1,0 +1,9 @@
+{
+  "name": "HopeHub",
+  "short_name": "HopeHub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7ff",
+  "theme_color": "#4f46e5",
+  "description": "Smart Community Resource Hub"
+}

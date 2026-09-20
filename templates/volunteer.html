@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HopeHub | Volunteer Support</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="brand">
+        🌷 <span>HopeHub</span>
+    </div>
+
+    <a href="/" class="nav-admin">
+        ← Home
+    </a>
+
+</nav>
+
+
+<section class="form-page">
+
+    <div class="form-header">
+
+        <div class="big-icon">🤝</div>
+
+        <p class="small-title">JOIN OUR COMMUNITY</p>
+
+        <h1>Volunteer Support</h1>
+
+        <p>
+            Give your time and skills to support people
+            and make a positive difference in your community.
+        </p>
+
+    </div>
+
+
+    <div class="form-box">
+
+        <form action="/volunteer" method="POST">
+
+            <label>Your Name</label>
+
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
+
+
+            <label>Contact Number</label>
+
+            <input type="tel"
+                   name="contact"
+                   placeholder="Enter contact number"
+                   required>
+
+
+            <label>Location</label>
+
+            <input type="text"
+                   name="location"
+                   placeholder="Enter your location"
+                   required>
+
+
+            <label>How Would You Like To Help?</label>
+
+            <textarea name="support"
+                      rows="4"
+                      placeholder="Example: Food distribution, helping children, emergency support..."
+                      required></textarea>
+
+
+            <button type="submit" class="submit-btn">
+                🤝 Join as Volunteer
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-logo">
+        🌷 HopeHub
+    </div>
+
+    <p>
+        Smart Community Resource Hub
+    </p>
+
+    <p class="copyright">
+        © 2026 HopeHub
+    </p>
+
+</footer>
+
+</body>
+</html>

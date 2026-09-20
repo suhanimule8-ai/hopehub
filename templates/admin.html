@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HopeHub | Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="admin-body">
+
+<nav class="admin-nav">
+    <div class="brand">🌷 HopeHub</div>
+
+    <div class="admin-nav-right">
+        <span>Admin Panel</span>
+        <a href="/admin-logout">Logout</a>
+    </div>
+</nav>
+
+
+<section class="admin-page">
+
+    <div class="admin-welcome">
+        <div>
+            <p class="admin-label">HOPEHUB ADMIN</p>
+
+            <h1>Dashboard</h1>
+
+            <p>
+                Manage community requests, donations and
+                volunteer support.
+            </p>
+        </div>
+
+        <div class="admin-big-icon">📊</div>
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon purple-icon">🆘</div>
+            <div>
+                <h3>{{ help_requests|length }}</h3>
+                <p>Help Requests</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon pink-icon">🎁</div>
+            <div>
+                <h3>{{ donations|length }}</h3>
+                <p>Donations</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon green-icon">🤝</div>
+            <div>
+                <h3>{{ volunteers|length }}</h3>
+                <p>Volunteers</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- HELP REQUESTS -->
+
+    <section class="admin-section">
+
+        <div class="section-title">
+            <div>
+                <span class="section-icon">🆘</span>
+
+                <div>
+                    <h2>Help Requests</h2>
+                    <p>People who need community support</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="admin-grid">
+
+            {% for item in help_requests %}
+
+            <div class="data-card help-border">
+
+                <div class="card-top">
+                    <span class="round-icon">🆘</span>
+                    <span class="status-badge">HELP NEEDED</span>
+                </div>
+
+                <h3>{{ item.help_type }}</h3>
+
+                <div class="info-row">
+                    <span>👤</span>
+                    <p>{{ item.name }}</p>
+                </div>
+
+                <div class="info-row">
+                    <span>📍</span>
+                    <p>{{ item.location }}</p>
+                </div>
+
+                <div class="info-row">
+                    <span>📞</span>
+                    <p>{{ item.contact }}</p>
+                </div>
+
+                <div class="message-box">
+                    <strong>Problem</strong>
+                    <p>{{ item.problem }}</p>
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="empty-state">
+                <div>📭</div>
+                <h3>No Help Requests</h3>
+                <p>There are no help requests yet.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- DONATIONS -->
+
+    <section class="admin-section">
+
+        <div class="section-title">
+            <div>
+                <span class="section-icon">🎁</span>
+
+                <div>
+                    <h2>Donations</h2>
+                    <p>Community contributions</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="admin-grid">
+
+            {% for item in donations %}
+
+            <div class="data-card donation-border">
+
+                <div class="card-top">
+
+                    {% if 'Books' in item.donation_type %}
+                        <span class="round-icon">📚</span>
+                        <span class="status-badge book-badge">BOOKS</span>
+
+                    {% elif 'Clothes' in item.donation_type %}
+                        <span class="round-icon">👕</span>
+                        <span class="status-badge clothes-badge">CLOTHES</span>
+
+                    {% elif 'Medicine' in item.donation_type %}
+                        <span class="round-icon">💊</span>
+                        <span class="status-badge medicine-badge">MEDICINE</span>
+
+                    {% else %}
+                        <span class="round-icon">🎁</span>
+                        <span class="status-badge">DONATION</span>
+                    {% endif %}
+
+                </div>
+
+                <h3>{{ item.donation_type }}</h3>
+
+                <div class="info-row">
+                    <span>👤</span>
+                    <p>{{ item.name }}</p>
+                </div>
+
+                <div class="info-row">
+                    <span>📍</span>
+                    <p>{{ item.location }}</p>
+                </div>
+
+                <div class="info-row">
+                    <span>📞</span>
+                    <p>{{ item.contact }}</p>
+                </div>
+
+                <div class="quantity-box">
+                    <strong>Quantity</strong>
+                    <span>{{ item.quantity }}</span>
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="empty-state">
+                <div>🎁</div>
+                <h3>No Donations</h3>
+                <p>No donations have been submitted yet.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- VOLUNTEERS -->
+
+    <section class="admin-section">
+
+        <div class="section-title">
+            <div>
+                <span class="section-icon">🤝</span>
+
+                <div>
+                    <h2>Volunteer Support</h2>
+                    <p>People ready to support the community</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="admin-grid">
+
+            {% for item in volunteers %}
+
+            <div class="data-card volunteer-border">
+
+                <div class="card-top">
+                    <span class="round-icon">🤝</span>
+                    <span class="status-badge volunteer-badge">
+                        VOLUNTEER
+                    </span>
+                </div>
+
+                <h3>{{ item.name }}</h3>
+
+                <div class="info-row">
+                    <span>📍</span>
+                    <p>{{ item.location }}</p>
+                </div>
+
+                <div class="info-row">
+                    <span>📞</span>
+                    <p>{{ item.contact }}</p>
+                </div>
+
+                <div class="message-box volunteer-message">
+                    <strong>Ready to help with</strong>
+                    <p>{{ item.support }}</p>
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="empty-state">
+                <div>🤝</div>
+                <h3>No Volunteers</h3>
+                <p>No volunteer registrations yet.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <div class="dashboard-home">
+        <a href="/">🏠 Back to HopeHub Home</a>
+    </div>
+
+</section>
+
+
+<footer class="admin-footer">
+    <strong>🌷 HopeHub</strong>
+    <p>Smart Community Resource Hub • © 2026</p>
+</footer>
+
+</body>
+</html>
